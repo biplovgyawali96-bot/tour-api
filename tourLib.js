@@ -39,6 +39,18 @@ const update = (id, data) => {
   return tour;
 };
 
+const deleteOne = (id) => {
+  const index = tours.findIndex((tour) => tour.id === Number(id));
+
+  if (index === -1) {
+    return false;
+  }
+
+  tours.splice(index, 1);
+
+  return true;
+};
+
 addOne(
   "Paris in 7 Days",
   "Explore Paris.",
@@ -60,5 +72,5 @@ module.exports = {
   getAll,
   findById,
   update,
+  deleteOne,
 };
-
