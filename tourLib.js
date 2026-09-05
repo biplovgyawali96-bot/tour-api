@@ -17,12 +17,14 @@ const addOne = (name, info, image, price, location) => {
   return tour;
 };
 
-// ⭐ Iteration 3: getAll()
 const getAll = () => {
   return tours;
 };
 
-// ⭐ Add two tours
+const findById = (id) => {
+  return tours.find((tour) => tour.id === Number(id)) || null;
+};
+
 addOne(
   "Paris in 7 Days",
   "Explore Paris.",
@@ -42,4 +44,5 @@ addOne(
 module.exports = {
   addOne,
   getAll,
+  findById,
 };
