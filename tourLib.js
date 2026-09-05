@@ -1,4 +1,6 @@
+
 let tours = [];
+
 let nextId = 1;
 
 const addOne = (name, info, image, price, location) => {
@@ -25,6 +27,18 @@ const findById = (id) => {
   return tours.find((tour) => tour.id === Number(id)) || null;
 };
 
+const update = (id, data) => {
+  const tour = findById(id);
+
+  if (!tour) {
+    return null;
+  }
+
+  Object.assign(tour, data);
+
+  return tour;
+};
+
 addOne(
   "Paris in 7 Days",
   "Explore Paris.",
@@ -45,4 +59,6 @@ module.exports = {
   addOne,
   getAll,
   findById,
+  update,
 };
+
