@@ -1,3 +1,5 @@
+const Tour = require("./tourLib");
+
 const getAllTours = (req, res) => {
   res.json({ message: "Hello from getAllTours" });
 };
