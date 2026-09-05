@@ -1,4 +1,3 @@
-
 const Tour = require("./tourLib");
 
 const getAllTours = (req, res) => {
@@ -8,6 +7,12 @@ const getAllTours = (req, res) => {
 
 const createTour = (req, res) => {
   const { name, info, image, price, location } = req.body;
+
+  if (!name || !info || !image || !price || !location) {
+    return res.status(400).json({
+      message: "All tour fields are required",
+    });
+  }
 
   const tour = Tour.addOne(
     name,
